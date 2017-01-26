@@ -185,10 +185,10 @@
             </objects>
             <point key="canvasLocation" x="1485.9375" y="-611.71875"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="ENR-jz-91R">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yoa-za-WEN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yoa-za-WEN" customClass="NavigationViewController" customModule="barTab" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dWW-iS-cJa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
