@@ -10,6 +10,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet var iconLabels: [UILabel]!
+    @IBOutlet var iconImages: [UIImageView]!
     @IBOutlet weak var errorIcon: UIImageView!
     var code = String();
     
@@ -20,7 +22,23 @@ class SecondViewController: UIViewController {
         if QRDate == getDateTime() {
             let table = code.substring(from:code.index(code.endIndex, offsetBy: -2))
             self.title = "Table " + table
+            
+            //Show icons and labels
+            for image in iconImages {
+                image.isHidden = false
+            }
+            for label in iconLabels {
+                label.isHidden = false
+            }
         } else {
+            
+            //Hide icons and labels
+            for label in iconLabels {
+                label.isHidden = true
+            }
+            for image in iconImages {
+                image.isHidden = true
+            }
             self.title = "Not a valid code"
             errorIcon.isHidden = false
             //code to show a error cross icon here
