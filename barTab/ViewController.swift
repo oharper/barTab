@@ -131,7 +131,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             
             let currentDevice: UIDevice = UIDevice.current
             
-            let orientation: UIDeviceOrientation = currentDevice.orientation
+            //was = currentDevice.orientation, change to landscapeLeft to force orientation
+            let orientation: UIDeviceOrientation = .landscapeLeft
             
             let previewLayerConnection : AVCaptureConnection = connection
             
