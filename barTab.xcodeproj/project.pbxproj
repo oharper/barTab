@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		303101B11E391D2D00C204D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303101B01E391D2D00C204D7 /* AppDelegate.swift */; };
 		303101B31E391D2D00C204D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303101B21E391D2D00C204D7 /* ViewController.swift */; };
-		303101B61E391D2D00C204D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303101B41E391D2D00C204D7 /* Main.storyboard */; };
+		303101B61E391D2D00C204D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303101B41E391D2D00C204D7 /* Main.storyboard */; settings = {ASSET_TAGS = (SecondViewController, ); }; };
 		303101B81E391D2D00C204D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303101B71E391D2D00C204D7 /* Assets.xcassets */; };
 		303101BB1E391D2D00C204D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303101B91E391D2D00C204D7 /* LaunchScreen.storyboard */; };
 		303101C61E391D2D00C204D7 /* barTabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303101C51E391D2D00C204D7 /* barTabTests.swift */; };
 		303101D11E391D2D00C204D7 /* barTabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303101D01E391D2D00C204D7 /* barTabUITests.swift */; };
+		303101DF1E393EA000C204D7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303101DE1E393EA000C204D7 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		303101CC1E391D2D00C204D7 /* barTabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = barTabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303101D01E391D2D00C204D7 /* barTabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barTabUITests.swift; sourceTree = "<group>"; };
 		303101D21E391D2D00C204D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		303101DE1E393EA000C204D7 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				303101B01E391D2D00C204D7 /* AppDelegate.swift */,
 				303101B21E391D2D00C204D7 /* ViewController.swift */,
 				303101B41E391D2D00C204D7 /* Main.storyboard */,
+				303101DE1E393EA000C204D7 /* SecondViewController.swift */,
 				303101B71E391D2D00C204D7 /* Assets.xcassets */,
 				303101B91E391D2D00C204D7 /* LaunchScreen.storyboard */,
 				303101BC1E391D2D00C204D7 /* Info.plist */,
@@ -187,6 +190,9 @@
 		303101A51E391D2D00C204D7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					SecondViewController,
+				);
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Owen Harper";
@@ -262,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303101DF1E393EA000C204D7 /* SecondViewController.swift in Sources */,
 				303101B31E391D2D00C204D7 /* ViewController.swift in Sources */,
 				303101B11E391D2D00C204D7 /* AppDelegate.swift in Sources */,
 			);
@@ -417,6 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FS4R4RGBU3;
 				INFOPLIST_FILE = barTab/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.barTab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,6 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FS4R4RGBU3;
 				INFOPLIST_FILE = barTab/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.owenharper.barTab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
