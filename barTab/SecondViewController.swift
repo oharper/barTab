@@ -10,13 +10,28 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var retryButton: UIButton!
     @IBOutlet var iconLabels: [UILabel]!
-    @IBOutlet var iconImages: [UIImageView]!
+    @IBOutlet var iconImages: [UIButton]!
     @IBOutlet weak var errorIcon: UIImageView!
     var code = String();
     
+    @IBAction func donePressed(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+        
+    }
+    
+    @IBAction func retryPressed(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
+//        self.navigationController?.navigationBar.isHidden = true
+        
         let QRDate = code.substring(to:code.index(code.startIndex, offsetBy: 8))
         
         if QRDate == getDateTime() {
@@ -30,6 +45,8 @@ class SecondViewController: UIViewController {
             for label in iconLabels {
                 label.isHidden = false
             }
+            retryButton.isHidden = true
+            errorIcon.isHidden = true
         } else {
             
             //Hide icons and labels
@@ -42,6 +59,7 @@ class SecondViewController: UIViewController {
             self.title = "Not a valid code"
             errorIcon.isHidden = false
             //code to show a error cross icon here
+            retryButton.isHidden = false
         }
         
         
