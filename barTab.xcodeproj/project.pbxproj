@@ -16,6 +16,7 @@
 		303101D11E391D2D00C204D7 /* barTabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303101D01E391D2D00C204D7 /* barTabUITests.swift */; };
 		303101DF1E393EA000C204D7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303101DE1E393EA000C204D7 /* SecondViewController.swift */; };
 		303101E11E3A750200C204D7 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303101E01E3A750200C204D7 /* NavigationViewController.swift */; };
+		303101E31E3B4A5D00C204D7 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303101E21E3B4A5D00C204D7 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		303101D21E391D2D00C204D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		303101DE1E393EA000C204D7 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		303101E01E3A750200C204D7 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		303101E21E3B4A5D00C204D7 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				303101B01E391D2D00C204D7 /* AppDelegate.swift */,
-				303101B21E391D2D00C204D7 /* ViewController.swift */,
 				303101B41E391D2D00C204D7 /* Main.storyboard */,
 				303101E01E3A750200C204D7 /* NavigationViewController.swift */,
+				303101B21E391D2D00C204D7 /* ViewController.swift */,
 				303101DE1E393EA000C204D7 /* SecondViewController.swift */,
+				303101E21E3B4A5D00C204D7 /* ThirdViewController.swift */,
 				303101B71E391D2D00C204D7 /* Assets.xcassets */,
 				303101B91E391D2D00C204D7 /* LaunchScreen.storyboard */,
 				303101BC1E391D2D00C204D7 /* Info.plist */,
@@ -273,6 +276,7 @@
 			files = (
 				303101E11E3A750200C204D7 /* NavigationViewController.swift in Sources */,
 				303101DF1E393EA000C204D7 /* SecondViewController.swift in Sources */,
+				303101E31E3B4A5D00C204D7 /* ThirdViewController.swift in Sources */,
 				303101B31E391D2D00C204D7 /* ViewController.swift in Sources */,
 				303101B11E391D2D00C204D7 /* AppDelegate.swift in Sources */,
 			);
@@ -527,6 +531,7 @@
 				303101D71E391D2D00C204D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		303101D81E391D2D00C204D7 /* Build configuration list for PBXNativeTarget "barTabTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +540,7 @@
 				303101DA1E391D2D00C204D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		303101DB1E391D2D00C204D7 /* Build configuration list for PBXNativeTarget "barTabUITests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +549,7 @@
 				303101DD1E391D2D00C204D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
