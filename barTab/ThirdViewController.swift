@@ -14,6 +14,9 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var leftTable: UITableView!
     
     var cell: UITableViewCell!
+    @IBAction func savePressed(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+    }
     var drinksArray = ["Peroni", "Carling", "Fosters"]
     var currentOrder = [String]()
     var isInOrder: Bool = false
@@ -27,6 +30,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var toBeMoved: String = ""
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +38,8 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         rightTable.delegate = self
         leftTable.dataSource = self
         rightTable.dataSource = self
+        
+        self.navigationItem.setHidesBackButton(false, animated: false)
         
     }
     

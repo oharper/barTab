@@ -30,7 +30,7 @@ class SecondViewController: UIViewController {
         
         self.navigationItem.setHidesBackButton(true, animated: false)
         
-        var code = "31/01/17:01" // delete this!
+//        var code = "31/01/17:01" // delete this!
         
         let QRDate = code.substring(to:code.index(code.startIndex, offsetBy: 8))
         
