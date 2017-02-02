@@ -15,6 +15,35 @@ class SecondViewController: UIViewController {
     @IBOutlet var iconImages: [UIButton]!
     @IBOutlet weak var errorIcon: UIImageView!
     var code = String();
+    var table: String = ""
+    var buttonPressed: String = ""
+    
+    @IBAction func chosenCategory(sender: AnyObject) {
+    guard let button = sender as? UIButton else {
+    return
+    }
+    
+    switch button.tag {
+    case 1:
+    buttonPressed = "Wine"
+    performSegue(withIdentifier: "showThird", sender: nil)
+    case 2:
+    buttonPressed = "Beer"
+    performSegue(withIdentifier: "showThird", sender: nil)
+    case 3:
+    buttonPressed = "Spirits"
+    performSegue(withIdentifier: "showThird", sender: nil)
+    case 4:
+    buttonPressed = "Soft Drinks"
+    performSegue(withIdentifier: "showThird", sender: nil)
+    case 5:
+    buttonPressed = "Others"
+    performSegue(withIdentifier: "showThird", sender: nil)
+    return
+    default: print("error")
+    }
+    }
+    
     
     @IBAction func donePressed(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
@@ -37,7 +66,6 @@ class SecondViewController: UIViewController {
         if QRDate == getDateTime() {
             let table = code.substring(from:code.index(code.endIndex, offsetBy: -2))
             self.title = "Table " + table
-            
             //Show icons and labels
             for image in iconImages {
                 image.isHidden = false
@@ -61,8 +89,6 @@ class SecondViewController: UIViewController {
             //code to show a error cross icon here
             retryButton.isHidden = false
         }
-        
-        
         // Do any additional setup after loading the view.
     }
 
@@ -77,6 +103,15 @@ class SecondViewController: UIViewController {
         formatter.dateFormat = "dd/MM/yy"
         let result = formatter.string(from: date)
         return result
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showThird") {
+            let view : ThirdViewController = segue.destination as! ThirdViewController;
+            let table = code.substring(from:code.index(code.endIndex, offsetBy: -2))
+            view.tableNumber = table
+            view.category = buttonPressed
+        }
     }
     
     

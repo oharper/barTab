@@ -112,26 +112,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTp-cy-YlQ">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTp-cy-YlQ">
                                 <rect key="frame" x="408" y="454" width="200" height="200"/>
                                 <state key="normal" image="more1600"/>
+                                <connections>
+                                    <action selector="chosenCategoryWithSender:" destination="KCa-Jj-zaH" eventType="touchUpInside" id="CPJ-cE-5RA"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMK-Bp-DTQ">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMK-Bp-DTQ">
                                 <rect key="frame" x="68" y="449" width="200" height="200"/>
                                 <state key="normal" image="drink-2"/>
+                                <connections>
+                                    <action selector="chosenCategoryWithSender:" destination="KCa-Jj-zaH" eventType="touchUpInside" id="9wk-FI-atk"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHO-d0-pPx">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHO-d0-pPx">
                                 <rect key="frame" x="757" y="143" width="200" height="200"/>
                                 <state key="normal" image="showing-gallery-for-liquor-bottles-clip-art-otYlk5-clipart"/>
+                                <connections>
+                                    <action selector="chosenCategoryWithSender:" destination="KCa-Jj-zaH" eventType="touchUpInside" id="Lee-PK-KC4"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WK-Fj-MrI">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WK-Fj-MrI">
                                 <rect key="frame" x="408" y="143" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="hFU-Ds-0Il"/>
                                 </constraints>
                                 <state key="normal" image="drink-3"/>
+                                <connections>
+                                    <action selector="chosenCategoryWithSender:" destination="KCa-Jj-zaH" eventType="touchUpInside" id="Bi5-0s-AuR"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPb-qd-V2n">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPb-qd-V2n">
                                 <rect key="frame" x="68" y="143" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Oe1-39-N0H"/>
@@ -139,7 +151,7 @@
                                 </constraints>
                                 <state key="normal" image="drink"/>
                                 <connections>
-                                    <segue destination="8bk-ql-AOw" kind="show" id="n8n-Or-sif"/>
+                                    <action selector="chosenCategoryWithSender:" destination="KCa-Jj-zaH" eventType="touchUpInside" id="wJu-Ut-YeO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alf-MJ-9Zl">
@@ -222,6 +234,7 @@
                         <outletCollection property="iconImages" destination="mMK-Bp-DTQ" collectionClass="NSMutableArray" id="wjI-3h-IsF"/>
                         <outletCollection property="iconImages" destination="UTp-cy-YlQ" collectionClass="NSMutableArray" id="dJj-67-L5s"/>
                         <outletCollection property="iconImages" destination="Alf-MJ-9Zl" collectionClass="NSMutableArray" id="E6C-ae-fW1"/>
+                        <segue destination="8bk-ql-AOw" kind="show" identifier="showThird" id="XyK-FB-XSc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxH-Ar-YmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -265,7 +278,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="upf-Nc-zA2" id="d2C-n9-PTk">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -283,7 +296,7 @@
                                         <rect key="frame" x="0.0" y="28" width="712" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RnN-O7-GOC" id="ymW-gf-Ira">
-                                            <rect key="frame" x="0.0" y="0.0" width="712" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="712" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -363,6 +376,6 @@
         <image name="tick_green" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="182-oc-O6u"/>
+        <segue reference="GDT-in-bMb"/>
     </inferredMetricsTieBreakers>
 </document>

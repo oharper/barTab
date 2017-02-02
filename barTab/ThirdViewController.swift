@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -14,9 +16,53 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var leftTable: UITableView!
     
     var cell: UITableViewCell!
+    var tableNumber: String = ""
+    var category: String = ""
+    
+    
+    
+    func getTime() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let result = formatter.string(from: date)
+        return result
+    }
+    
+    func getDate() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yy"
+        let result = formatter.string(from: date)
+        return result
+    }
+    
     @IBAction func savePressed(_ sender: Any) {
+        for item in currentOrder {
+            let time = getTime()
+            let table = tableNumber
+            
+            let indexToBeMoved = item.index(item.endIndex, offsetBy: -3)
+            let drinkName = item.substring(to: indexToBeMoved)
+            
+            let quantityIndex = item.index(item.endIndex, offsetBy: -2)
+            let quantity = String(item[quantityIndex])
+            
+            let order : [String : String] = ["Time" : time, "Table" : table, "Drink" : drinkName, "Quantity" : quantity]
+            
+            let databaseRef = FIRDatabase.database().reference()
+            
+            databaseRef.child("Orders").child(getDate()).childByAutoId().setValue(order)
+        }
+        
+        
+        
         _ = navigationController?.popViewController(animated: true)
     }
+    
+    
+    
+    
     var drinksArray = ["Peroni", "Carling", "Fosters"]
     var currentOrder = [String]()
     var isInOrder: Bool = false
@@ -33,7 +79,6 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         leftTable.delegate = self
         rightTable.delegate = self
         leftTable.dataSource = self
@@ -94,7 +139,6 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func getAlreadyInOrderIndex(itemToRemove: String) -> Int {
         while currentOrder.contains(itemToRemove) {
             if let itemToRemoveIndex = currentOrder.index(of: itemToRemove) {
-                print(itemToRemoveIndex)
                 
                 return itemToRemoveIndex
             }
@@ -108,7 +152,6 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if (tableView.tag == 1) {
             toBeMoved = drinksArray[indexPath.row]
             if checkAlreadyInOrder(toBeMoved: toBeMoved) {
-                print("Already in order")
                 //code here for if it is already in order
                 let orderValue = getAlreadyInOrder(toBeMoved: toBeMoved)
                 let index = orderValue.index(orderValue.endIndex, offsetBy: -2)
@@ -123,7 +166,6 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.rightTable.reloadData()
             }
             else {
-                print("Not in order")
                 //code here for if it is not already in order
                 currentOrder.append(toBeMoved+"(1)")
                 self.rightTable.reloadData()
